@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
     origin: [
-      "http://localhost:3000",
+      "http://localhost:3001/todo_frontend",
       "https://oluekele.github.io/todo_frontend/",
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
