@@ -9,11 +9,11 @@ const app = express();
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// app.use(
-//   cors({
-//     origin: ["http://localhost:3000", "https://mern-task.onrender.com"], // Add your frontend's production URL here
-//   })
-// );
+app.use(
+  cors({
+    origin: ["http://localhost:3000", ""], // Add your frontend's production URL here
+  })
+);
 
 // Routes
 app.use("/api/tasks", taskRoutes); // Prefix for API routes
