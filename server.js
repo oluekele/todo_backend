@@ -11,12 +11,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: "http://localhost:3000", // Add your frontend's production URL here
+    origin: ["http://localhost:3000", "https://your-frontend-url.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    credentials: true,
   })
 );
 
 // Routes
-app.use("/api/tasks", taskRoutes); // Prefix for API routes
+app.use(taskRoutes); // Prefix for API routes
 
 app.get("/", (req, res) => {
   res.send("Welcome to the home page!");
